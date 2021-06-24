@@ -1,24 +1,38 @@
 import React from "react"
 
-function Accordion() {
-   return (
-      <div>
-         <AccordionTitle title={'Menu'} />
-         <AccordionBody  />
-      </div>
-   )
+type AccordionPropsType = {
+   titleValue: string
+   collabsed: boolean
 }
 
-function AccordionTitle(props: any) {
-   return <h3>{props.title}</h3>
+type AccordionTitlePropsType = {
+   title: string
+}
+
+function Accordion(props: AccordionPropsType) {
+   if (!props.collabsed === false) {
+      return <div>
+         <AccordionTitle title={props.titleValue} />
+         <AccordionBody />
+      </div>
+   } else {
+      return <div>
+         <AccordionTitle title={props.titleValue} />
+      </div>
+   }
+
+}
+
+function AccordionTitle(props: AccordionTitlePropsType) {
+   return <h3>-- {props.title} --</h3>
 }
 
 function AccordionBody() {
-   return <ol>
-      <li></li>
-      <li></li>
-      <li></li>
-   </ol>
+   return <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+   </ul>
 }
 
 export default Accordion;

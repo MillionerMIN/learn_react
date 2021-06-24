@@ -4,17 +4,22 @@ import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import { Rating } from './components/Rating/Rating';
 
+type PageTitlePropsType = {
+  value: string
+}
+
 function App() {
   return (
-    <div>
+    <div className='container'>
       <PageTitle value={'This is App component'} />
 
-      Articl 1
-      <Rating value={1}/>
+     
+      <Rating value={1} />
 
-      <Accordion />
+      <Accordion titleValue={'Menu'} collabsed={true} />
 
-      Articl 2
+      <Accordion titleValue={'User'} collabsed={false} />
+
       <Rating value={1} />
       <Rating value={2} />
       <Rating value={3} />
@@ -24,7 +29,7 @@ function App() {
   );
 }
 
-function PageTitle(props: any) {
+function PageTitle(props: PageTitlePropsType) {
   return <h1>{props.value}</h1>
 }
 
