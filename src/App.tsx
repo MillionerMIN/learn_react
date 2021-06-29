@@ -13,9 +13,6 @@ function App() {
     <div className='container'>
       <PageTitle value={'This is App component'} />
 
-     
-      <Rating value={1} />
-
       <Accordion titleValue={'Menu'} collabsed={true} />
 
       <Accordion titleValue={'User'} collabsed={false} />
@@ -25,6 +22,7 @@ function App() {
       <Rating value={3} />
       <Rating value={4} />
       <Rating value={5} />
+
     </div>
   );
 }

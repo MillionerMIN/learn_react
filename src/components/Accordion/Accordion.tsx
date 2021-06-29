@@ -10,17 +10,10 @@ type AccordionTitlePropsType = {
 }
 
 function Accordion(props: AccordionPropsType) {
-   if (!props.collabsed === false) {
       return <div>
          <AccordionTitle title={props.titleValue} />
-         <AccordionBody />
+         { !props.collabsed && <AccordionBody />}
       </div>
-   } else {
-      return <div>
-         <AccordionTitle title={props.titleValue} />
-      </div>
-   }
-
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
