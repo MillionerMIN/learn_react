@@ -1,8 +1,7 @@
-
 import React from "react";
 
 type RatingPropsType = {
-   value: 0| 1 | 2 | 3 | 4 | 5
+   value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
 type StarPropsType = {
@@ -21,7 +20,7 @@ export function Rating(props: RatingPropsType) {
 }
 
 function Star(props: StarPropsType) {
-   
+
    if (props.selected === true) {
       return <span style={{ color: 'yellow' }}><b>star </b></span>;
    } else {
