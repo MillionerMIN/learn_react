@@ -1,35 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import OnOff from './components/OnOff/OnOff';
-import { Rating } from './components/Rating/Rating';
-import { UnconRating } from './components/UnconRating/UnconRating';
-import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import { Rating, RatingValueType } from './components/Rating/Rating';
 
 type PageTitlePropsType = {
   value: string
 }
 
 function App() {
+  let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  let [accordionCollbpsed, setAccordionCollabsed] = useState<boolean>(false);
+  let [on, setOn] = useState<boolean>(false);
+
   return (
     <div className='container'>
       <PageTitle value={'This is App component'} />
 
-      <Accordion titleValue={'Menu'} collabsed={true} />
+      <Accordion titleValue={'Menu'} onClick={setAccordionCollabsed} collabsed={accordionCollbpsed} />
 
-      <Accordion titleValue={'User'} collabsed={false} />
+      {/* <Accordion titleValue={'User'} onClick={setAccordionCollabsed} collabsed={accordionCollbpsed}/> */}
 
-      <Rating value={1} />
-      <Rating value={2} />
-      <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} />
+      {/* <Rating value={ratingValue} onClick={setRatingValue} />
+      <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/>
+      <Rating value={ratingValue} onClick={setRatingValue}/> */}
 
-      <OnOff />
-
-      <UncontrolledAccordion titleValue={'Menu'}/>
-      <UncontrolledAccordion titleValue={'User'}/>
-      <UnconRating />
+      <OnOff onClick={setOn} value={on} />
+     
     </div>
   );
 }

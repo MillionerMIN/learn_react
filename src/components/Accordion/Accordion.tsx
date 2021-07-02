@@ -1,23 +1,26 @@
 import React from "react"
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
    titleValue: string
    collabsed: boolean
+   onClick: (collapbed: boolean) => void
 }
 
 type AccordionTitlePropsType = {
    title: string
+   onClick: () => void
 }
 
 function Accordion(props: AccordionPropsType) {
-      return <div>
-         <AccordionTitle title={props.titleValue} />
-         { !props.collabsed && <AccordionBody />}
-      </div>
+   return <div>
+      <AccordionTitle title={props.titleValue} onClick={() => { props.onClick(!props.collabsed) }}/>
+
+      {!props.collabsed && <AccordionBody />}
+   </div>
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-   return <h3>-- {props.title} --</h3>
+   return <h3 onClick={() => {props.onClick()}}>-- {props.title} --</h3>
 }
 
 function AccordionBody() {

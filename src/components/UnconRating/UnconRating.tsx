@@ -1,32 +1,36 @@
 
 import React, { useState } from "react";
 
-// type UnconRatingPropsType = {
-//    value: 0| 1 | 2 | 3 | 4 | 5
-// }
+type UnconRatingPropsType = {
+   value: 0 | 1 | 2 | 3 | 4 | 5
+}
 
 type StarPropsType = {
    selected: boolean
+   value: 1 | 2 | 3 | 4 | 5
+   setValue: (value: 0 | 1 | 2 | 3 | 4 | 5) => void
 }
 
-export function UnconRating() {
+export function UnconRating(props: UnconRatingPropsType) {
 
-   const [star, setStar] = useState(0);
+   const [value, setValue] = useState(4);
 
    return <div>
-      <Star selected={star > 0} /> <button onClick={() => { setStar(1)}}>1</button>
-      <Star selected={star > 1} /><button onClick={() => { setStar(2) }}>2</button>
-      <Star selected={star > 2} /><button onClick={() => { setStar(3) }}>3</button>
-      <Star selected={star > 3} /><button onClick={() => { setStar(4) }}>4</button>
-      <Star selected={star > 4} /><button onClick={() => { setStar(5) }}>5</button>
+      <Star selected={value > 0} setValue={setValue} value={1} />
+      <Star selected={value > 1} setValue={setValue} value={2}/>
+      <Star selected={value > 2} setValue={setValue} value={3}/>
+      <Star selected={value > 3} setValue={setValue} value={4}/>
+      <Star selected={value > 4} setValue={setValue} value={5}/>
    </div>
 }
 
 function Star(props: StarPropsType) {
-   
-   if (props.selected === true) {
-      return <span style={{ color: 'yellow' }}><b>star </b></span>;
-   } else {
-      return <span>star </span>;
-   };
+
+   const yellow = {
+      color: 'yellow'
+   }
+
+   return <span onClick={() => { props.setValue(props.value) }}>
+      {props.selected ? <b style={yellow}>star </b> : 'star ' }
+      </span >;
 }

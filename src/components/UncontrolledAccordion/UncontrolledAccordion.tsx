@@ -4,22 +4,23 @@ type UncontrolledAccordionPropsType = {
    titleValue: string
 }
 
-type UncontrolledAccordionTitlePropsType = {
+type AccordionTitlePropsType = {
    title: string
+   onClick: () => void
 }
 
 function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 
-   const [toggle, setToogle] = useState(false)
+   const [collabsed, setCollabsed] = useState(false);
+
    return <div>
-      <UncontrolledAccordionTitle title={props.titleValue} />
-      {toggle ? <AccordionBody /> : ''}
-      <button onClick={() => { setToogle(true)}}>TOGGLE</button>
+      <AccordionTitle title={props.titleValue} onClick={() => { setCollabsed(!collabsed)}}/>
+      {!collabsed ? <AccordionBody /> : ''}
    </div>
 }
 
-function UncontrolledAccordionTitle(props: UncontrolledAccordionTitlePropsType) {
-   return <h3>-- {props.title} --</h3>
+function AccordionTitle(props: AccordionTitlePropsType) {
+   return <h3 onClick={() => {props.onClick()}}>-- {props.title} --</h3>
 }
 
 function AccordionBody() {
@@ -28,7 +29,6 @@ function AccordionBody() {
       <li>2</li>
       <li>3</li>
    </ul>
-
 }
 
 export default UncontrolledAccordion;
