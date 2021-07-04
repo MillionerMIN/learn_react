@@ -1,5 +1,3 @@
-
-import { spawnSync } from "child_process";
 import React from "react";
 
 type RatingPropsType = {
