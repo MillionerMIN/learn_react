@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
-import OnOff from './components/OnOff/OnOff';
+import { OnOff } from './components/OnOff/OnOff';
 import { Rating, RatingValueType } from './components/Rating/Rating';
 import UnconOnOff from './components/UncontroledOnOff/UnconOnOff';
 
@@ -24,7 +24,7 @@ function App() {
 
       <Rating value={ratingValue} onClick={setRatingValue} />
 
-      {/* <OnOff onChange={() => { setSwichOn(!swichOn) }} on={swichOn} /> */}
+      <OnOff onClick={() => { setSwichOn(!swichOn) }} on={swichOn} />
 
       <UnconOnOff onChange={setSwichOn} /> {swichOn.toString()}
     </div>
