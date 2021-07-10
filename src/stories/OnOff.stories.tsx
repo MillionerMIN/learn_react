@@ -1,5 +1,3 @@
-// Button.stories.ts | Button.stories.tsx
-
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
 import { OnOff, OnOffType } from '../components/OnOff/OnOff';

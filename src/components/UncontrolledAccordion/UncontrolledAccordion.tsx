@@ -14,8 +14,8 @@ function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
    const [collabsed, setCollabsed] = useState(false);
 
    return <div>
-      <AccordionTitle title={props.titleValue} onClick={() => { setCollabsed(!collabsed)}}/>
-      {!collabsed ? <AccordionBody /> : ''}
+      <AccordionTitle title={props.titleValue} onClick={() => { setCollabsed(!collabsed)}} />
+      {!collabsed && <AccordionBody />}
    </div>
 }
 
@@ -31,4 +31,6 @@ function AccordionBody() {
    </ul>
 }
 
-export default UncontrolledAccordion;
+export {
+   UncontrolledAccordion
+};

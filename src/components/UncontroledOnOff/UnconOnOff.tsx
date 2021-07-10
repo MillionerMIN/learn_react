@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
 type OnOffType = {
    onChange: (on: boolean) => void
+   defaultOn?: boolean
 }
 
-function UnconOnOff(props: OnOffType) {
+function UnconOnOff({ defaultOn, onChange}: OnOffType) {
 
-   let [on, setOn] = useState(false);
+   let [on, setOn] = useState(defaultOn ? defaultOn : false);
 
    const onStyle = {
       width: '30px',
@@ -37,12 +39,12 @@ function UnconOnOff(props: OnOffType) {
 
    const onClicked = () => {
       setOn(true)
-      props.onChange(true)
+      onChange(true)
    }
 
    const offCliked = () => {
       setOn(false)
-      props.onChange(false)
+      onChange(false)
    }
 
    return <div>
@@ -53,4 +55,6 @@ function UnconOnOff(props: OnOffType) {
    </div>
 }
 
-export default UnconOnOff;
+export {
+   UnconOnOff
+}
