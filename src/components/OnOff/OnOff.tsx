@@ -1,4 +1,5 @@
 import React from "react";
+import style from './onOff.module.css';
 
 export type OnOffType = {
    on: boolean
@@ -8,36 +9,18 @@ export type OnOffType = {
 export function OnOff(props: OnOffType) {
 
    const onStyle = {
-      width: '30px',
-      height: '20px',
-      textAline: 'center',
-      color: 'black',
-      backgroundColor: props.on ? "white" : "green",
-      display: 'inline-block',
-      cursor: 'pointer',
+      backgroundColor: !props.on ? "white" : "green",
    }
    const offStyle = {
-      width: '30px',
-      height: '20px',
-      textAline: 'center',
-      color: 'black',
-      backgroundColor: props.on ? "red" : "white",
-      display: 'inline-block',
-      cursor: 'pointer',
+      backgroundColor: !props.on ? "red" : "white", 
    }
    const indicatorStyle = {
-      width: '10px',
-      height: '10px',
-      marginLeft: '5px',
-      border: '1px solid black',
-      borderRadius: '5px',
-      display: 'inline-block',
-      backgroundColor: props.on ? "red" : "green",
+      backgroundColor: !props.on ? "red" : "green",
    }
 
    return <div>
-      <div style={onStyle} onClick={props.onClick}>ON</div>
-      <div style={offStyle} onClick={props.onClick}>OFF</div>
-      <div style={indicatorStyle} onClick={props.onClick}></div>
+      <div style={onStyle} className={style.on} onClick={props.onClick}>ON</div>
+      <div style={offStyle} className={style.off} onClick={props.onClick}>OFF</div>
+      <div style={indicatorStyle} className={style.indicator} onClick={props.onClick}></div>
    </div>
 }

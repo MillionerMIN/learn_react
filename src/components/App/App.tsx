@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import './App.css';
-import Accordion from './components/Accordion/Accordion';
-import { OnOff } from './components/OnOff/OnOff';
-import { Rating, RatingValueType } from './components/Rating/Rating';
-import UnconOnOff from './components/UncontroledOnOff/UnconOnOff';
+import { Accordion } from '../Accordion/Accordion';
+import { OnOff } from '../OnOff/OnOff';
+import { Rating, RatingValueType } from '../Rating/Rating';
+import UnconOnOff from '../UncontroledOnOff/UnconOnOff';
+import style from './app.module.css';
 
 type PageTitlePropsType = {
   value: string
 }
 
 function App() {
-  let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
-  let [accordionCollpsed, setAccordionCollapsed] = useState<boolean>(false);
-  let [swichOn, setSwichOn] = useState<boolean>(false);
+  const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  const [accordionCollpsed, setAccordionCollapsed] = useState<boolean>(false);
+  const [swichOn, setSwichOn] = useState<boolean>(false);
 
   return (
-    <div className='container'>
+    <div className={style.container}>
       <PageTitle value={'This is App component'} />
 
       <Accordion titleValue={'Menu'} onChange={() => { setAccordionCollapsed(!accordionCollpsed) }} collapsed={accordionCollpsed} />
