@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Accordion } from '../Accordion/Accordion';
 import { OnOff } from '../OnOff/OnOff';
 import { Rating, RatingValueType } from '../Rating/Rating';
-import UnconOnOff from '../UncontroledOnOff/UnconOnOff';
+import {UnconOnOff} from '../UncontroledOnOff/UnconOnOff';
 import style from './app.module.css';
 
 type PageTitlePropsType = {
@@ -14,13 +14,21 @@ function App() {
   const [accordionCollpsed, setAccordionCollapsed] = useState<boolean>(false);
   const [swichOn, setSwichOn] = useState<boolean>(false);
 
+  const data = {
+    items: [
+      { name: 'Vladimir', value: 1 },
+      { name: 'Anna', value: 2 },
+    ]
+  }
   return (
     <div className={style.container}>
       <PageTitle value={'This is App component'} />
 
-      <Accordion titleValue={'Menu'} onChange={() => { setAccordionCollapsed(!accordionCollpsed) }} collapsed={accordionCollpsed} />
+      <Accordion titleValue={'Users'} 
+      onChange={() => { setAccordionCollapsed(!accordionCollpsed) }} 
+      collapsed={accordionCollpsed}
+      items={data.items} />
 
-      {/* <Accordion titleValue={'User'} onClick={setAccordionCollabsed} collabsed={accordionCollbpsed}/> */}
 
       <Rating value={ratingValue} onClick={setRatingValue} />
 
