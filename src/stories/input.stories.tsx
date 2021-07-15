@@ -30,5 +30,39 @@ export const GetValueOfUncontroledInputByButtonPress = (onChang: () => void) => 
       -actual value: {value} </>
 }
 
+export const ControledInput = () => {
+   const [perentValue, setPerentValue] = useState('');
+
+   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setPerentValue(e.currentTarget.value)
+   }
+
+   return <input value={perentValue} onChange={onChange} />
+}
+
+export const ControledCheckbox = () => {
+   const [perentValue, setPerentValue] = useState(false);
+
+   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setPerentValue(e.currentTarget.checked)
+   }
+
+   return <input type='checkbox' checked={perentValue} onChange={onChange} />
+}
+
+export const ControledSelect = () => {
+   const [perentVelue, setPerentVelue] = useState<string | undefined>('2');
+
+   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+      setPerentVelue(e.currentTarget.value)
+   }
+   return <select value={perentVelue} onChange={onChange}>
+      <option value="0">none</option>
+      <option value="1">Minsk</option>
+      <option value="2">Moscow</option>
+      <option value="3">Kiev</option>
+   </select>
+}
+
 export const ControledInputWithFixedValue = () => <input value='Hello' />
 
