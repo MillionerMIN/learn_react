@@ -8,14 +8,19 @@ export type OnOffType = {
 
 export function OnOff(props: OnOffType) {
 
+
+
+
    const onStyle = {
-      backgroundColor: !props.on ? "white" : "green",
+      backgroundColor: !props.on ? "#b6b4b4" : "#38C558",
    }
+   
+   
    const offStyle = {
-      backgroundColor: !props.on ? "red" : "white", 
+      backgroundColor: !props.on ? "#EC0E52" : "#b6b4b4",
    }
    const indicatorStyle = {
-      backgroundColor: !props.on ? "red" : "green",
+      backgroundColor: !props.on ? "#EC0E52" : "#38C558",
    }
 
    return <div>

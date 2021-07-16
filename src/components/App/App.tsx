@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Accordion } from '../Accordion/Accordion';
+import { Button } from '../Button/Button';
 import { OnOff } from '../OnOff/OnOff';
 import { Rating, RatingValueType } from '../Rating/Rating';
 import {UnconOnOff} from '../UncontroledOnOff/UnconOnOff';
@@ -35,6 +36,10 @@ function App() {
       <OnOff onClick={() => { setSwichOn(!swichOn) }} on={swichOn} />
 
       <UnconOnOff onChange={setSwichOn} /> {swichOn.toString()}
+
+      <Button primery='primery' label='Кнопка'/>
+      
+      <Button primery='secondary' label='Secondary'/>
     </div>
   );
 }
