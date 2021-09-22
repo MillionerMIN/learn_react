@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { NewsCard } from "../components/NewCard/NewsCard";
+import { NewsCard } from "./NewsCard";
 import styled from 'styled-components'
 
 const Container = styled.div`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Story, Meta } from '@storybook/react';
-import { OnOff, OnOffType } from '../components/OnOff/OnOff';
+import { OnOff, OnOffType } from './OnOff';
 
 
 export default {

@@ -55,7 +55,7 @@ const style = {
 
 function AccordionBody({items}: AccordionBodyType) {
    return <ul>
-      {items.map((i, index) => <li>{i.name}</li>)}
+      {items.map((i, index) => <li key={index}>{i.name}</li>)}
    </ul>
 }
 

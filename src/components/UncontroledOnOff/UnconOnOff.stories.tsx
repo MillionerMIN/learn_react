@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react";
 import React from "react";
-import { UnconOnOff } from "../components/UncontroledOnOff/UnconOnOff";
+import { UnconOnOff } from "./UnconOnOff";
 
 
 export default{

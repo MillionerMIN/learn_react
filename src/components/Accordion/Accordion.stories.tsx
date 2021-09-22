@@ -1,7 +1,7 @@
 import { Story } from "@storybook/react";
 import React from "react";
 import { Meta } from '@storybook/react';
-import { Accordion, AccordionPropsType } from "../components/Accordion/Accordion";
+import { Accordion, AccordionPropsType } from "./Accordion";
 import { useState } from 'react';
 
 
@@ -42,10 +42,11 @@ Default.args = {
 export const Collapsed = Template.bind({});
 Collapsed.args = {
    titleValue: 'Menu',
-   collapsed: true,
+   collapsed: !true,
    items: [
       { name: 'Vladimir', value: 1 },
       { name: 'Anna', value: 2 },
+      { name: 'Georgie', value: 3 },
    ]
 };
 
@@ -58,5 +59,6 @@ ModeChanging.args={
    items: [
       { name: 'Vladimir', value: 1 },
       { name: 'Anna', value: 2 },
+      { name: 'Georgie', value: 3 },
    ],
 }

@@ -3,6 +3,7 @@ import { Accordion } from '../Accordion/Accordion';
 import { Button } from '../Button/Button';
 import { OnOff } from '../OnOff/OnOff';
 import { Rating, RatingValueType } from '../Rating/Rating';
+import { Select, SelectBody } from '../Select/Select';
 import {UnconOnOff} from '../UncontroledOnOff/UnconOnOff';
 import style from './app.module.css';
 
@@ -19,10 +20,19 @@ function App() {
     items: [
       { name: 'Vladimir', value: 1 },
       { name: 'Anna', value: 2 },
+      {name: 'Georgi', value: 3},
     ]
   }
+
+  const person = [
+    { id: 1, name: 'Jone' },
+    { id: 2, name: 'Anna' },
+    { id: 3, name: 'Piter' },
+    { id: 4, name: 'Same' },
+  ]
+
   return (
-    <div className={style.container}>
+    <div className={style.app}>
       <PageTitle value={'This is App component'} />
 
       <Accordion titleValue={'Users'} 
@@ -37,9 +47,12 @@ function App() {
 
       <UnconOnOff onChange={setSwichOn} /> {swichOn.toString()}
 
-      <Button primery='primery' label='Кнопка'/>
+      {/* <Button primery='primery' label='Кнопка'/> */}
       
-      <Button primery='secondary' label='Secondary'/>
+      {/* <Button primery='secondary' label='Secondary'/> */}
+
+      <Select title='i went' items={person} onChange={()=>{}}/>
+      <SelectBody items={person}/>
     </div>
   );
 }

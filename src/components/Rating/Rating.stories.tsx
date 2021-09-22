@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Rating, RatingValueType } from '../components/Rating/Rating';
+import { Rating, RatingValueType } from './Rating';
 
 export default {
    title: 'UI/Rating stories',

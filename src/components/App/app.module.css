@@ -1,9 +1,7 @@
-.container {
+.app {
    display: block;
    border: 5px solid yellow;
    width: 1140px;
    margin: 20px auto;
    border-radius: 10px;
 }
-
-

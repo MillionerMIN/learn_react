@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react';
 
-import { UnconRating } from '../components/UnconRating/UnconRating';
+import { UnconRating } from './UnconRating';
 
 export default {
    title: 'UI/UnconRating stories',
