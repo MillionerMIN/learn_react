@@ -13,19 +13,19 @@
   animation: show-loader 0.5s forwards;
 }
 
-.circle.entering {
+.circle-show {
   animation: show-loader 0.5s forwards;
 }
 
-.circle.entered {
-  animation: rotate-loader 0.5s infinite;
+.circle-rotate {
+  animation: rotate-rotate 0.5s infinite;
 }
 
-.circle.exiting {
+.circle-hide {
   animation: show-loader 0.5s reverse;
 }
 
-.circle.exited {}
+.circle-exited {}
 
 @keyframes show-loader {
   0% {
@@ -42,7 +42,7 @@
   }
 }
 
-@keyframes rotate-loader {
+@keyframes rotate-rotate {
   0% {
     transform: rotate(0deg);
   }
